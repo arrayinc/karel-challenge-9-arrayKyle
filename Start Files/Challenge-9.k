@@ -27,3 +27,55 @@ or hitting walls.
  Karel should not run into a wall if it builds a house that extends into
  that final corner.
 */
+
+import"turns";   
+
+function SuperMan(){
+	while(frontIsClear()){
+		findLocation();
+		buildHouse();
+	}
+}
+
+function findLocation(){
+	while(noBeepersPresent()){
+		move();
+	}
+	pickBeeper();
+	turnAround();
+	move();
+	turnAround();
+	}
+	
+function buildHouse(){
+		turnLeft();
+	repeat(3){
+		putBeeper();
+		move();
+	} 
+		turnRight();
+		move();
+		turnRight();
+
+	repeat(3){
+		putBeeper();
+		move();
+	}
+		turnAround();
+		move();
+		move();
+		turnRight();
+		move();
+		turnRight();
+
+	repeat(2){
+		putBeeper(); 
+		move();
+	}
+		putBeeper();
+		turnLeft();
+		if(frontIsClear()){
+		move();
+	}
+}
+   
